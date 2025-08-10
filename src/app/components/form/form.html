@@ -8,20 +8,19 @@
         <form class="flex flex-col gap-6 form-width" (ngSubmit)="onSubmit()" #movieForm="ngForm">
             <input type="text" [(ngModel)]="title" name="title"
                 class="border border-white text-white bg-black placeholder-gray-500 p-2"
-                placeholder="Digite o Nome do Filme/Série" required>
+                placeholder="Digite o Nome do Filme/Série" maxlength="60" required>
 
             <input type="text" [(ngModel)]="genre" name="genre"
-                class="border border-white text-white bg-black placeholder-gray-500 p-2"
-                placeholder="Gênero" required>
+                class="border border-white text-white bg-black placeholder-gray-500 p-2" placeholder="Gênero"
+                maxlength="20" required>
 
             <input type="url" [(ngModel)]="poster" name="poster"
                 class="border border-white text-white bg-black placeholder-gray-500 p-2"
-                placeholder="URL do Pôster" required>
+                placeholder="URL do Pôster (Recomendável: 1200 x 1800)" required>
 
-            <textarea [(ngModel)]="description" name="description"
-                placeholder="Descrição"
+            <textarea [(ngModel)]="description" name="description" placeholder="Descrição"
                 class="border border-white text-white bg-black placeholder-gray-500 p-2 h-36 resize-none"
-                required></textarea>
+                maxlength="230"></textarea>
 
             <button class="rounded-md h-12 font-bold" type="submit">Enviar</button>
         </form>

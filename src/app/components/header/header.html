@@ -5,9 +5,10 @@
                 <img src="img/logoMosten.png" alt=""> </a>
             <nav class="desktop noto-sans-semi poppins-regular">
                 <ul>
-                    <li><a href="/">INÍCIO</a></li>
-                    <li><a href="/developer">FILMES</a></li>
-                    <button class="bg-green ml-1 py-2 px-4 rounded-xl" onclick="window.location.href='/register'">CADASTRAR FILME</button>
+                    <li><a href="#home">INÍCIO</a></li>
+                    <li><a href="#movies">FILMES</a></li>
+                    <button class="bg-green ml-1 py-2 px-4 rounded-xl" onclick="window.location.href='#form'">CADASTRAR
+                        FILME</button>
                 </ul>
             </nav>
             <nav class="mobile transition_on">
@@ -19,9 +20,10 @@
             </nav>
             <div id="opt_menu" class="mobile transition_on" [ngClass]="{'ativo': menuAtivo}">
                 <ul>
-                    <li><a href="/">Início</a></li>
-                    <li><a href="/r">Filmes</a></li>
-                    <button class="mt-3 py-2 px-4 rounded-xl font-bold" onclick="window.location.href='/register'">Cadastrar</button>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#movies">Filmes</a></li>
+                    <button class="mt-3 py-2 px-4 rounded-xl font-bold"
+                        onclick="window.location.href='#form'">Cadastrar</button>
                 </ul>
             </div>
             <div class="fundo_menu mobile transition_on" [ngClass]="{'ativo': menuAtivo}" (click)="toggleMenu()"></div>
