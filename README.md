@@ -1,59 +1,77 @@
-# MostenVotacaoDeFilmes
+# Desafio Técnico Mosten 2025/2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+Teste técnico para seguir na candidatura da trilha de desenvolvimento Front-End na Mosten no 2º semestre de 2025.
 
-## Development server
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/38a1c173-4cfe-48a3-9ac7-4c0554fe1911" />
 
-To start a local development server, run:
 
+
+## Tecnologias utilizadas:
+- Angular v20.1.5
+- Typescript 5.8.3
+- TailwindCSS v3.4.17
+- Sass v1.90.0
+
+## Deploy do projeto:
+https://mosten-tomatoes.vercel.app/
+
+## Comandos para rodar o projeto na sua máquina:
+(Certifique-se que o node, angular e git estejam instalados na sua máquina!)
+
+
+## 1º
 ```bash
-ng serve
+npm i
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 2º 
 
 ```bash
-ng generate component component-name
+ng s -o
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Critérios de aceite do teste técnico:
 
-```bash
-ng generate --help
-```
+🎬 Sistema de Votação de Filmes e Séries
 
-## Building
+✅ Objetivo do Projeto
+Desenvolver um sistema completo (front-end e back-end) que permita aos usuários visualizarem, votarem (positivamente ou negativamente) e cadastrarem filmes ou séries, com persistência de dados e atualização em tempo real dos votos.
 
-To build the project run:
+## Funcionalidades Principais:
+## 1. Exibição de Filmes/Séries
+Exibir ao menos 5 itens inicialmente.
 
-```bash
-ng build
-```
+Cada item deve conter:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Título
 
-## Running unit tests
+Gênero
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Descrição
 
-```bash
-ng test
-```
+Imagem (URL ou placeholder)
 
-## Running end-to-end tests
+Botões: “Gostei” e “Não Gostei”
 
-For end-to-end (e2e) testing, run:
+## 2. Sistema de Votação
+Atualização imediata dos votos ao clicar em “Gostei” ou “Não Gostei”.
 
-```bash
-ng e2e
-```
+Exibir:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Votos positivos e negativos por item.
 
-## Additional Resources
+Totais gerais de votos positivos e negativos.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 3. Cadastro de Novos Itens
+Formulário com campos:
+
+Obrigatórios: Título, Gênero, Imagem (URL)
+
+Opcional: Descrição
+
+Itens cadastrados devem aparecer imediatamente com votos zerados e prontos para votação.
+
+## 4. Persistência de Dados
+Todos os dados (itens, votos, cadastros) devem ser armazenados de forma persistente (não se perdem ao recarregar).
+
+## O sistema deve ser estilizado e garantir uma experiência amigável ao usuário.
