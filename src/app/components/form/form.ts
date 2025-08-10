@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MoviesService } from '../../services/movies-service';
-
+import { Toast } from '../../services/toast';
+import { ToastError } from '../toast-error/toast-error';
 
 @Component({
   selector: 'app-form',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [FormsModule, ToastError],
   templateUrl: './form.html',
-  styleUrl: './form.scss'
+  styleUrls: ['./form.scss']
 })
 export class Form {
   title = '';
@@ -15,11 +17,14 @@ export class Form {
   poster = '';
   description = '';
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(
+    private moviesService: MoviesService,
+    private toastService: Toast
+  ) { }
 
   onSubmit() {
     if (!this.title || !this.genre || !this.poster || !this.description) {
-      alert('Preencha todos os campos!');
+      this.toastService.showToast('Preencha todos os campos!', 'error');
       return;
     }
 
@@ -35,6 +40,10 @@ export class Form {
     this.poster = '';
     this.description = '';
 
-    alert('Filme cadastrado com sucesso!');
+    this.toastService.showToast('Filme/Série cadastrado com sucesso!', 'success');
+    const moviesSection = document.getElementById('movies');
+    if (moviesSection) {
+      moviesSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
