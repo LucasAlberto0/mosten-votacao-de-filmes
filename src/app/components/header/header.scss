@@ -1,4 +1,4 @@
-    .transition_on *,
+.transition_on *,
     .transition_on {
     transition: ease 0.5s all;
     }
@@ -113,9 +113,8 @@
     }
     header {
         img {
-        margin: 13px;
-        width: 110px;
-        height: 30px;
+        width: 150px;
+        height: 50px;
         }
     }
     }
@@ -247,9 +246,8 @@
     }
     header {
         img {
-        margin: 13px;
-        width: 110px;
-        height: 30px;
+        width: 120px;
+        height: 40px;
         }
         #opt_menu {
         top: 58px;
@@ -267,9 +265,10 @@
 
     header {
         img {
-        margin: 13px;
-        width: 110px;
-        height: 25px;
+        margin: 0px;
+        width: 120px;
+        height: 40px;
+        margin: 5px;
         &:hover {
             transform: none;
             }
