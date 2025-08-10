@@ -1,0 +1,50 @@
+<article
+    class="w-full h-full 2xl:max-w-7xl xl:max-w-6xl md:max-w-5xl sm:max-w-2xl h-3/5 text-white overflow-hidden mt-32 poppins-regular">
+    <div class="text-5xl font-bold title mb-12 quando flex flex-row items-center gap-3" data-aos="zoom-in-up"
+        data-aos-duration="1200">
+        <img src="img/icons/cinemaIcon.svg" class="w-16 h-16 icon-size1" alt="">Filmes
+        
+    </div>
+    <aside class="flex flex-row flex-wrap justify-center gap-3 text-center">
+        <div *ngFor="let movie of movies" class="w-72 border-8 border-purple-custom rounded-2xl" data-aos="zoom-in-up"
+            data-aos-duration="800">
+            <div class="h-img h-80">
+                <img [src]="movie.poster" class="w-full h-full" [alt]="movie.title">
+            </div>
+            <div class="h-autos">
+                <div class="bg-purple-custom">
+                    <p class="font-bold text-xl bg-purple-custom text-white p-2 quando">{{ movie.title }}</p>
+                </div>
+                <div class="bg-purple-custom">
+                    <div class="flex-custom justify-center w-full bg-purple-custom gap-1 p-2">
+                        Gênero: {{ movie.genre }}
+                    </div>
+                </div>
+                <div class="flex justify-center items-center w-full gap-4 p-2 bg-purple-custom">
+                    <div class="flex gap-2">
+                        <button (click)="incrementLike(movie)"
+                            class="flex items-center gap-1 justify-center px-4 py-2 rounded-full bg-[#1b0341] transition-all duration-300 hover:bg-green-500 text-white">
+                            <img src="img/icons/likeIcon.svg" alt="Like" class="w-5 h-5">
+                            <span>{{ movie.likeCount }}</span>
+                        </button>
+                        <button (click)="incrementDislike(movie)"
+                            class="flex items-center gap-1 justify-center px-4 py-2 rounded-full bg-[#1b0341] transition-all duration-300 hover:bg-red-500 text-white">
+                            <img src="img/icons/dislikeIcon.svg" alt="Dislike" class="w-5 h-5">
+                            <span>{{ movie.dislikeCount }}</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-white text-lg font-semibold">
+                        <span>{{ likePercentage(movie) }}%</span>
+                        <img [src]="likePercentage(movie) >= 50 ? 'img/icons/tomateBom.png' : 'img/icons/tomatePodre.png'"
+                            alt="Tomate" class="w-8 h-8">
+                    </div>
+                </div>
+
+                <div class="text-center p-2 text-purple-custom text-sm">
+                    {{ movie.description }}
+                </div>
+            </div>
+        </div>
+    </aside>
+</article>
