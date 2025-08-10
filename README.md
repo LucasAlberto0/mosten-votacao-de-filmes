@@ -12,7 +12,8 @@ Teste técnico para seguir na candidatura da trilha de desenvolvimento Front-End
 - TailwindCSS v3.4.17
 - Sass v1.90.0
 
-<a href="https://mosten-tomatoes.vercel.app/" target="_blank">Deploy do projeto</a>
+## Deploy do projeto:
+https://mosten-tomatoes.vercel.app/
 
 ## Comandos para rodar o projeto na sua máquina:
 (Certifique-se que o node, angular e git estejam instalados na sua máquina!)
