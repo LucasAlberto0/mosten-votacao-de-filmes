@@ -1,0 +1,8 @@
+<div class="toast rounded-l-xl" [class.toast-success]="type === 'success'" [class.toast-error]="type === 'error'"
+    [class.visible]="showToast" [class.fade-out]="fadingOut">
+    <div class="flex flex-row gap-3 items-center">
+        <img *ngIf="type === 'success'" src="img/icons/check-circle.svg" width="28" height="28" alt="Sucesso" />
+        <img *ngIf="type === 'error'" src="img/icons/close.svg" width="28" height="28" alt="Erro" />
+        <p>{{ message }}</p>
+    </div>
+</div>
