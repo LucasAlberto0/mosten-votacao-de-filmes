@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 interface Movie {
   id: number;
@@ -15,7 +15,7 @@ interface Movie {
   templateUrl: './list-movies.html',
   styleUrl: './list-movies.scss'
 })
-export class ListMovies {
+export class ListMovies implements OnInit {
   movies: Movie[] = [
     {
       id: 1,
@@ -73,18 +73,48 @@ export class ListMovies {
     }
   ];
 
-  incrementLike(movie: Movie) {
+  ngOnInit() {
+    this.loadVotes();
+  }
+  incrementLike(movie: any) {
     movie.likeCount++;
+    this.saveVotes();
   }
 
-  incrementDislike(movie: Movie) {
+  incrementDislike(movie: any) {
     movie.dislikeCount++;
+    this.saveVotes();
   }
 
+  saveVotes() {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('moviesVotes', JSON.stringify(this.movies));
+    }
+  }
+
+  loadVotes() {
+    if (typeof localStorage !== 'undefined') {
+      const data = localStorage.getItem('moviesVotes');
+      if (data) {
+        this.movies = JSON.parse(data);
+      }
+    }
+  }
+
+  getTotalLikes(): number {
+    return this.movies.reduce((sum, m) => sum + m.likeCount, 0);
+  }
+
+  getTotalDislikes(): number {
+    return this.movies.reduce((sum, m) => sum + m.dislikeCount, 0);
+  }
+
+  getTotalVotes(): number {
+    return this.getTotalLikes() + this.getTotalDislikes();
+  }
   likePercentage(movie: Movie): number {
     const total = movie.likeCount + movie.dislikeCount;
-    if (total === 0) return 100; 
+    if (total === 0) return 100;
     return Math.round((movie.likeCount / total) * 100);
   }
-
 }
