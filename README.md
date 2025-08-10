@@ -74,4 +74,4 @@ Itens cadastrados devem aparecer imediatamente com votos zerados e prontos para 
 ## 4. Persistência de Dados
 Todos os dados (itens, votos, cadastros) devem ser armazenados de forma persistente (não se perdem ao recarregar).
 
-## O sistema deve ser estilizado e garantir uma experiência amigável ao usuário.
+O sistema deve ser estilizado e garantir uma experiência amigável ao usuário.
