@@ -2,8 +2,7 @@
     class="w-full h-full 2xl:max-w-7xl xl:max-w-6xl md:max-w-5xl sm:max-w-2xl h-3/5 text-white overflow-hidden poppins-regular">
     <div class="text-5xl font-bold title mb-12 quando flex flex-row items-center gap-3" data-aos="zoom-in-up"
         data-aos-duration="1200">
-        <img src="img/icons/cinemaIcon.svg" class="w-16 h-16 icon-size1" alt="">Filmes
-
+        <img src="img/icons/cinemaIcon.svg" class="w-16 h-16 icon-size1" alt="">Filmes/Séries
     </div>
     <aside class="flex flex-row flex-wrap justify-center gap-3 text-center">
         <div *ngFor="let movie of movies" class="w-72 border-8 border-purple-custom rounded-2xl" data-aos="zoom-in-up"
@@ -52,5 +51,4 @@
         <div class="rounded-xl p-4 bg-[#1b0341] flex flex-row gap-1 items-center">Total de <img src="img/icons/dislikeIcon.svg" alt="">: {{ getTotalDislikes() }}</div>
         <div class="rounded-xl p-4 bg-[#1b0341]">Total de votos: {{ getTotalVotes() }}</div>
     </div>
-
 </article>

@@ -1,20 +1,28 @@
 <article class="w-full h-full 2xl:max-w-7xl xl:max-w-6xl md:max-w-5xl sm:max-w-2xl rounded-2xl h-3/5">
-    <div class="flex flex-row items-center gap-2 mb-14"><div class="font-bold text-5xl text-white flex-custom text-center">
-        Cadastro de <span class="text-purple-custom">Filme/Série</span>
-    </div></div>
+    <div class="flex flex-row items-center gap-2 mb-14">
+        <div class="font-bold text-5xl text-white flex-custom text-center">
+            Cadastro de <span class="text-purple-custom">Filme/Série</span>
+        </div>
+    </div>
     <div class="dad-div flex flex-row justify-center gap-36">
-        <form class="flex flex-col gap-6 form-width">
-            <input type="text" 
+        <form class="flex flex-col gap-6 form-width" (ngSubmit)="onSubmit()" #movieForm="ngForm">
+            <input type="text" [(ngModel)]="title" name="title"
                 class="border border-white text-white bg-black placeholder-gray-500 p-2"
                 placeholder="Digite o Nome do Filme/Série" required>
-            <input
-                class="border border-white text-white bg-black placeholder-gray-500 p-2" placeholder="Gênero"
-                required>
-            <input class="border border-white text-white bg-black placeholder-gray-500 p-2"
+
+            <input type="text" [(ngModel)]="genre" name="genre"
+                class="border border-white text-white bg-black placeholder-gray-500 p-2"
+                placeholder="Gênero" required>
+
+            <input type="url" [(ngModel)]="poster" name="poster"
+                class="border border-white text-white bg-black placeholder-gray-500 p-2"
                 placeholder="URL do Pôster" required>
-            <textarea placeholder="Descrição"
+
+            <textarea [(ngModel)]="description" name="description"
+                placeholder="Descrição"
                 class="border border-white text-white bg-black placeholder-gray-500 p-2 h-36 resize-none"
                 required></textarea>
+
             <button class="rounded-md h-12 font-bold" type="submit">Enviar</button>
         </form>
     </div>
