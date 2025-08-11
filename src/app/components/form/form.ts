@@ -23,7 +23,7 @@ export class Form {
   ) { }
 
   onSubmit() {
-    if (!this.title || !this.genre || !this.poster || !this.description) {
+    if (!this.title || !this.genre || !this.poster) {
       this.toastService.showToast('Preencha todos os campos!', 'error');
       return;
     }
