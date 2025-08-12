@@ -8,7 +8,7 @@
         <div *ngFor="let movie of movies" class="w-72 border-8 border-purple-custom rounded-2xl" data-aos="zoom-in-up"
             data-aos-duration="800">
             <div class="h-img h-80">
-                <img [src]="movie.poster" class="w-full h-full" alt="Pôster">
+                <img [src]="movie.poster" class="w-full h-full" [alt]="movie.title">
             </div>
             <div class="h-autos">
                 <div class="bg-purple-custom">
@@ -34,7 +34,7 @@
                     </div>
                     <span>{{ likePercentage(movie) }}%</span>
                     <img [src]="likePercentage(movie) >= 50 ? 'img/icons/tomateBom.png' : 'img/icons/tomatePodre.png'"
-                        alt="Tomate" class="w-8 h-8">222
+                        alt="Tomate" class="w-8 h-8">
                 </div>
                 <div class="text-center p-2 text-purple-custom text-sm">
                     {{ movie.description }}
